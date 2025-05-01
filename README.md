@@ -1,54 +1,149 @@
-# React + TypeScript + Vite
+RBAC Blog System Frontend
+This project implements the frontend for a Role-Based Access Control (RBAC) blog system with user and admin roles.
+Project Overview
+A secure blog frontend with:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+JWT authentication.
+Role-based authorization.
+Pages for login, signup, posts, and admin dashboard.
 
-Currently, two official plugins are available:
+Folder Structure
+project/
+├── src/
+│   ├── components/         # Reusable UI components
+│   │   └── Navbar.tsx     # Navigation bar
+│   ├── pages/             # Page components
+│   │   ├── Login.tsx      # Login page
+│   │   ├── Signup.tsx     # Signup page
+│   │   ├── Posts.tsx      # View posts
+│   │   └── AdminDashboard.tsx # Admin dashboard
+│   ├── services/          # API logic
+│   │   └── api.ts         # API calls
+│   ├── styles/            # CSS styles
+│   │   └── global.css     # Global styles
+│   ├── types/             # TypeScript types
+│   │   └── index.ts       # Post types
+│   ├── App.tsx            # Main app
+│   └── main.tsx           # Entry point
+├── vite.config.ts         # Vite config
+├── tsconfig.json          # TypeScript config
+├── package.json           # Dependencies
+└── README.md              # This file
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies Used
 
-## Expanding the ESLint configuration
+Node.js: v20.11.1
+React: v18.2.0
+Vite: v5.2.0
+TypeScript: v5.2.2
+React Router: v6.22.3
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Summary of Endpoints Integrated
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Endpoint
+Method
+Description
+Authorization
+Role Restriction
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+
+/auth/signup
+POST
+Register user
+No
+No
+
+
+/auth/verify
+GET
+Verify email
+No
+No
+
+
+/auth/login
+POST
+Get JWT
+No
+No
+
+
+/posts
+GET
+View posts
+Yes
+No
+
+
+/posts
+POST
+Create post
+Yes
+Admin only
+
+
+/posts/:id
+PATCH
+Update post
+Yes
+Admin only
+
+
+/posts/:id
+DELETE
+Delete post
+Yes
+Admin only
+
+
+Live Deployment
+
+Frontend: Deployed on Netlify ([Insert Netlify URL here]).
+Backend: Hosted on Render at https://liaplusai-backend-3.onrender.com.
+
+Prerequisites
+
+Node.js: v20.11.1 or higher
+Backend API: Running at https://liaplusai-backend-3.onrender.com.
+
+Setup Instructions
+
+Clone Project:
+git clone <repository-url>
+cd project
+
+
+Install Dependencies:
+npm install
+
+
+Run Project:
+npm run dev
+
+Opens at http://localhost:5173.
+
+
+Usage
+
+Signup and login at /signup or /login.
+View posts at /posts.
+Admins manage posts at /admin.
+
+Scripts
+
+npm run dev: Start dev server.
+npm run build: Build for production.
+
+Troubleshooting
+
+401 Unauthorized: Check JWT token.
+CORS Issues: Verify backend allows frontend URL.
+
+Contact Information
+
+Name: Saurav Gupta
+Email: gsaurav641@gmail.com
+
