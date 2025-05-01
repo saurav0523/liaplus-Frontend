@@ -57,7 +57,7 @@ project/
 
 ## ***Live Deployment***
 
-- ***Frontend***: On ***Netlify*** ([Insert Netlify URL here])  
+- ***Frontend***: On ***Netlify*** at [https://jolly-pasca-ce69bc.netlify.app/](https://jolly-pasca-ce69bc.netlify.app/)  
 - ***Backend***: On ***Render*** at [https://liaplusai-backend-3.onrender.com](https://liaplusai-backend-3.onrender.com)
 
 ## ***Prerequisites***
