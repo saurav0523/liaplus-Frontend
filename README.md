@@ -1,149 +1,102 @@
-RBAC Blog System Frontend
-This project implements the frontend for a Role-Based Access Control (RBAC) blog system with user and admin roles.
-Project Overview
-A secure blog frontend with:
+# ***RBAC Blog System Frontend***
 
-JWT authentication.
-Role-based authorization.
-Pages for login, signup, posts, and admin dashboard.
+Frontend for a ***Role-Based Access Control (RBAC)*** blog system with user and admin roles.
+
+## ***Project Overview***
+
+Secure blog frontend with:  
+- ***JWT*** authentication  
+- ***Role-based*** access  
+- Pages for login, signup, posts, admin dashboard  
+
+## ***Folder Structure***
 
 Folder Structure
 project/
 ├── src/
-│   ├── components/         # Reusable UI components
-│   │   └── Navbar.tsx     # Navigation bar
-│   ├── pages/             # Page components
-│   │   ├── Login.tsx      # Login page
-│   │   ├── Signup.tsx     # Signup page
-│   │   ├── Posts.tsx      # View posts
-│   │   └── AdminDashboard.tsx # Admin dashboard
-│   ├── services/          # API logic
-│   │   └── api.ts         # API calls
-│   ├── styles/            # CSS styles
-│   │   └── global.css     # Global styles
-│   ├── types/             # TypeScript types
-│   │   └── index.ts       # Post types
-│   ├── App.tsx            # Main app
-│   └── main.tsx           # Entry point
-├── vite.config.ts         # Vite config
-├── tsconfig.json          # TypeScript config
-├── package.json           # Dependencies
-└── README.md              # This file
-
-Technologies Used
-
-Node.js: v20.11.1
-React: v18.2.0
-Vite: v5.2.0
-TypeScript: v5.2.2
-React Router: v6.22.3
-
-Summary of Endpoints Integrated
+│   ├── components/         
+│   │   └── Navbar.tsx     
+│   ├── pages/             
+│   │   ├── Login.tsx      
+│   │   ├── Signup.tsx     
+│   │   ├── Posts.tsx    
+│   │   └── AdminDashboard.tsx 
+│   ├── services/         
+│   │   └── api.ts        
+│   ├── styles/           
+│   │   └── global.css     
+│   ├── types/            
+│   │   └── index.ts      
+│   ├── App.tsx           
+│   └── main.tsx           
+├── vite.config.ts        
+├── tsconfig.json          
+├── package.json          
+└── README.md             
 
 
+## ***Technologies Used***
 
-Endpoint
-Method
-Description
-Authorization
-Role Restriction
+- ***Node.js***: v20.11.1  
+- ***React***: v18.2.0  
+- ***Vite***: v5.2.0  
+- ***TypeScript***: v5.2.2  
+- ***React Router***: v6.22.3  
 
+## ***Endpoints Integrated***
 
+| Endpoint         | Method | Description        | Authorization | Role Restriction |
+|------------------|--------|--------------------|---------------|------------------|
+| `/auth/signup`   | POST   | Register user      | No            | No               |
+| `/auth/verify`   | GET    | Verify email       | No            | No               |
+| `/auth/login`    | POST   | Get ***JWT***      | No            | No               |
+| `/posts`         | GET    | View posts         | Yes           | No               |
+| `/posts`         | POST   | Create post        | Yes           | Admin only       |
+| `/posts/:id`     | PATCH  | Update post        | Yes           | Admin only       |
+| `/posts/:id`     | DELETE | Delete post        | Yes           | Admin only       |
 
-/auth/signup
-POST
-Register user
-No
-No
+## ***Live Deployment***
 
+- ***Frontend***: On ***Netlify*** ([Insert Netlify URL here])  
+- ***Backend***: On ***Render*** at [https://liaplusai-backend-3.onrender.com](https://liaplusai-backend-3.onrender.com)
 
-/auth/verify
-GET
-Verify email
-No
-No
+## ***Prerequisites***
 
+- ***Node.js***: v20.11.1+  
+- ***Backend API***: [https://liaplusai-backend-3.onrender.com](https://liaplusai-backend-3.onrender.com)
 
-/auth/login
-POST
-Get JWT
-No
-No
-
-
-/posts
-GET
-View posts
-Yes
-No
+## ***Setup Instructions***
 
 
-/posts
-POST
-Create post
-Yes
-Admin only
 
-
-/posts/:id
-PATCH
-Update post
-Yes
-Admin only
-
-
-/posts/:id
-DELETE
-Delete post
-Yes
-Admin only
-
-
-Live Deployment
-
-Frontend: Deployed on Netlify ([Insert Netlify URL here]).
-Backend: Hosted on Render at https://liaplusai-backend-3.onrender.com.
-
-Prerequisites
-
-Node.js: v20.11.1 or higher
-Backend API: Running at https://liaplusai-backend-3.onrender.com.
-
-Setup Instructions
-
-Clone Project:
-git clone <repository-url>
-cd project
-
-
-Install Dependencies:
+ ***Install Dependencies***  
 npm install
 
 
-Run Project:
+
+3. ***Run Project***  
 npm run dev
 
-Opens at http://localhost:5173.
+Opens at `http://localhost:5173`
 
+## ***Usage***
 
-Usage
+- Signup/login at `/signup` or `/login`  
+- View posts at `/posts`  
+- Admins manage posts at `/admin`
 
-Signup and login at /signup or /login.
-View posts at /posts.
-Admins manage posts at /admin.
+## ***Scripts***
 
-Scripts
+- ***npm run dev***: Start dev server  
+- ***npm run build***: Build for production  
 
-npm run dev: Start dev server.
-npm run build: Build for production.
+## ***Troubleshooting***
 
-Troubleshooting
+- ***401 Unauthorized***: Check ***JWT*** token  
+- ***CORS Issues***: Verify backend allows frontend URL  
 
-401 Unauthorized: Check JWT token.
-CORS Issues: Verify backend allows frontend URL.
+## ***Contact Information***
 
-Contact Information
-
-Name: Saurav Gupta
-Email: gsaurav641@gmail.com
+- ***Name***: Saurav Gupta  
+- ***Email***: [gsaurav641@gmail.com](mailto:gsaurav641@gmail.com)
 
