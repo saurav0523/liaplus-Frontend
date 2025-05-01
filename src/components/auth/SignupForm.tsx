@@ -11,6 +11,7 @@ function SignupForm() {
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [isLoading, setIsLoading] = useState(false); 
   const navigate = useNavigate();
 
   const handleSignup = async () => {
@@ -37,6 +38,7 @@ function SignupForm() {
 
     if (!isValid) return;
 
+    setIsLoading(true); 
     try {
       const response = await axios.post('https://liaplusai-backend-3.onrender.com/auth/signup', {
         email,
@@ -55,6 +57,8 @@ function SignupForm() {
       console.error('Signup error:', error);
       toast.error(error.response?.data?.message || 'Error signing up. Try again.');
       setMessage('Error signing up. Try again.');
+    } finally {
+      setIsLoading(false); 
     }
   };
 
@@ -102,8 +106,23 @@ function SignupForm() {
           <button
             onClick={handleSignup}
             className="signup-button"
+            disabled={isLoading}
           >
-            Sign Up
+            {isLoading ? (
+              <span
+                style={{
+                  display: 'inline-block',
+                  width: '20px',
+                  height: '20px',
+                  border: '3px solid #fff',
+                  borderTop: '3px solid transparent',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite',
+                }}
+              />
+            ) : (
+              'Sign Up'
+            )}
           </button>
 
           <p className="account-text">
@@ -126,4 +145,5 @@ function SignupForm() {
 }
 
 export default SignupForm;
+
 

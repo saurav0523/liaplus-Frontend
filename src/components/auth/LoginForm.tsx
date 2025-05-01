@@ -1,20 +1,21 @@
 import { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { User } from '../../types/types';
 import toast from 'react-hot-toast';
 import '../../style/style.css';
+import { useNavigate, Navigate } from 'react-router-dom';
+import axios from 'axios';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [isLoading, setIsLoading] = useState(false); 
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     setEmailError('');
     setPasswordError('');
@@ -35,6 +36,7 @@ function LoginForm() {
 
     if (!isValid) return;
 
+    setIsLoading(true); 
     try {
       const response = await axios.post('https://liaplusai-backend-3.onrender.com/auth/login', {
         email,
@@ -51,6 +53,8 @@ function LoginForm() {
       }
     } catch (error: any) {
       toast.error(error.response?.data?.message || 'Login failed');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -81,8 +85,22 @@ function LoginForm() {
           />
           {passwordError && <p style={{ color: 'red', margin: 0 }}>{passwordError}</p>}
 
-          <button type="submit" className="login-button">
-            Login
+          <button type="submit" className="login-button" disabled={isLoading}>
+            {isLoading ? (
+              <span
+                style={{
+                  display: 'inline-block',
+                  width: '20px',
+                  height: '20px',
+                  border: '3px solid #fff',
+                  borderTop: '3px solid transparent',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite',
+                }}
+              />
+            ) : (
+              'Login'
+            )}
           </button>
 
           <p className="account-text">
