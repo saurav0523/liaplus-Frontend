@@ -6,12 +6,12 @@ import '../../style/style.css';
 
 function VerifyEmail() {
   const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const storedEmail = localStorage.getItem('email');
   const token = localStorage.getItem('verification_token');
+
   useEffect(() => {
     if (!storedEmail || !token) {
       toast.error('No verification data found. Please sign up again.');
@@ -20,14 +20,12 @@ function VerifyEmail() {
   }, [navigate, storedEmail, token]);
 
   const handleVerify = async () => {
-    setEmailError('');
     if (!email) {
-      setEmailError('Email is required');
+      toast.error('Email is required');
       return;
     }
 
     if (email !== storedEmail) {
-      setEmailError('Email does not match the signup email.');
       toast.error('Not verified. Email does not match.');
       setTimeout(() => navigate('/'), 2000);
       return;
@@ -63,7 +61,6 @@ function VerifyEmail() {
             placeholder="Enter your email to verify"
             className="verify-input"
           />
-          console.log({emailError})
           <button
             onClick={handleVerify}
             className="verify-button"
