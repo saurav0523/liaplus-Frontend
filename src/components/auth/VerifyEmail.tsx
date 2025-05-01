@@ -103,7 +103,7 @@ function VerifyEmail() {
   return (
     <div className="verify-container">
       <div className="verify-card">
-        <h2 className="verify-title">Verify Your Email</h2>
+        <h2 className="verify-title">Verify Your Email ID</h2>
 
         <div className="verify-form">
           <input
