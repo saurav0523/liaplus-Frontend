@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/common/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Verify from './pages/Verify';
@@ -9,14 +8,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
 
-  const token =localStorage.getItem("token");
-
-  // if(token){
-  //   // return <Navigate to="/user" replace/>
-  // }
   return (
     <BrowserRouter>
-      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

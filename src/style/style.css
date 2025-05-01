@@ -1,4 +1,4 @@
-/* Signup Container */
+
 .signup-container {
   min-height: 100vh;
   display: flex;
@@ -10,7 +10,6 @@
   box-sizing: border-box;
 }
 
-/* Card */
 .signup-card {
   max-width: 400px;
   width: 100%;
@@ -22,7 +21,7 @@
   box-sizing: border-box;
 }
 
-/* Title */
+
 .signup-title {
   font-size: 28px;
   font-weight: bold;
@@ -31,7 +30,6 @@
   color: #1e88e5;
 }
 
-/* Inputs */
 .signup-input {
   width: 100%;
   padding: 12px 15px;
@@ -48,7 +46,6 @@
   border-color: #1e88e5;
 }
 
-/* Role Selection */
 .role-selection {
   display: flex;
   justify-content: space-around;
@@ -63,7 +60,6 @@
   font-size: 16px;
 }
 
-/* Button */
 .signup-button {
   width: 100%;
   background: linear-gradient(to right, #1e88e5, #8e24aa);
@@ -82,7 +78,6 @@
   transform: scale(1.05);
 }
 
-/* Message */
 .signup-message {
   margin-top: 15px;
   text-align: center;
@@ -91,7 +86,6 @@
   animation: pulse 1s infinite;
 }
 
-/* Pulse Animation */
 @keyframes pulse {
   0% {
     opacity: 1;
@@ -106,7 +100,6 @@
   }
 }
 
-/* ✅ Responsive */
 @media (max-width: 480px) {
   .signup-card {
     padding: 20px;
@@ -123,7 +116,6 @@
 }
 
 
-/* Login Container */
 .login-container {
   min-height: 100vh;
   display: flex;
@@ -135,7 +127,6 @@
   box-sizing: border-box;
 }
 
-/* Card */
 .login-card {
   max-width: 400px;
   width: 100%;
@@ -147,7 +138,6 @@
   box-sizing: border-box;
 }
 
-/* Title */
 .login-title {
   font-size: 28px;
   font-weight: bold;
@@ -156,7 +146,6 @@
   color: #1e88e5;
 }
 
-/* Inputs */
 .login-input {
   width: 100%;
   padding: 12px 15px;
@@ -173,7 +162,6 @@
   border-color: #1e88e5;
 }
 
-/* Button */
 .login-button {
   width: 100%;
   background: linear-gradient(to right, #1e88e5, #8e24aa);
@@ -192,7 +180,6 @@
   transform: scale(1.05);
 }
 
-/* Normal text */
 .account-text {
   margin-top: 16px;
   font-size: 14px;
@@ -200,25 +187,19 @@
   text-align: center;
 }
 
-/* Login clickable link */
 .login-link {
   color: #2563eb;
-  /* Blue */
   font-weight: 600;
   margin-left: 5px;
   cursor: pointer;
   transition: color 0.3s, text-decoration 0.3s;
 }
 
-/* Hover effect */
 .login-link:hover {
   color: #1d4ed8;
-  /* Darker blue */
   text-decoration: underline;
 }
 
-
-/* ✅ Responsive */
 @media (max-width: 480px) {
   .login-card {
     padding: 20px;
@@ -234,9 +215,6 @@
   }
 }
 
-
-
-/* Verify Container */
 .verify-container {
   min-height: 100vh;
   display: flex;
@@ -248,7 +226,6 @@
   box-sizing: border-box;
 }
 
-/* Card */
 .verify-card {
   max-width: 400px;
   width: 100%;
@@ -260,7 +237,6 @@
   box-sizing: border-box;
 }
 
-/* Title */
 .verify-title {
   font-size: 28px;
   font-weight: bold;
@@ -269,7 +245,6 @@
   color: #1e88e5;
 }
 
-/* Input */
 .verify-input {
   width: 100%;
   padding: 12px 15px;
@@ -286,7 +261,6 @@
   border-color: #1e88e5;
 }
 
-/* Button */
 .verify-button {
   width: 100%;
   background: linear-gradient(to right, #1e88e5, #8e24aa);
@@ -305,7 +279,6 @@
   transform: scale(1.05);
 }
 
-/* ✅ Responsive */
 @media (max-width: 480px) {
   .verify-card {
     padding: 20px;
@@ -405,12 +378,6 @@
   margin-bottom: 20px;
 }
 
-.posts-grid {
-  /* display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px; */
-  /* margin-bottom: 10px; */
-}
 
 .post-card {
   background: #fff;
@@ -479,18 +446,15 @@
   margin: 0 auto;
 }
 
-/* Container */
 .user-dashboard-container {
   padding: 20px;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Header */
 .user-dashboard-header {
   width: 100%;
   display: flex;
-  /* justify-content: ; */
   margin-bottom: 20px;
   gap: 200px;
 }
@@ -501,7 +465,6 @@
   color: #333;
 }
 
-/* Posts Heading */
 .user-posts-heading {
   font-size: 30px;
   margin: 20px 0;
@@ -512,14 +475,12 @@
   font-size: 20px;
 }
 
-/* Posts List (Single Column) */
 .user-posts-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Post Card */
 .user-post-card {
   background: #fff;
   padding: 20px;

@@ -6,12 +6,9 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 function UserDashboard() {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
 
   const navigate = useNavigate();
 
-  // ✅ Token check
   const token = localStorage.getItem("token");
   if (!token) {
     return <Navigate to="/user" replace />;
@@ -37,18 +34,15 @@ function UserDashboard() {
 
   return (
     <div className="user-dashboard-container">
-      {/* Header */}
       <div className="user-dashboard-header">
-        <div className="dashboard-header" style={{width:"1000px", display: 'flex', justifyContent: 'space-between', alignItems: 'center' ,background:"red"}}>
+        <div className="dashboard-header" style={{width:"1000px", display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <h1 className="">User Dashboard</h1>
-          <button onClick={handleLogout} className="logout">Logout</button>
+          <button onClick={handleLogout} className="logout-button">Logout</button>
         </div>
       </div>
 
-      {/* Posts Heading */}
       <h2 className="user-posts-heading">All Blogs</h2>
 
-      {/* Posts List */}
       <div className="user-posts-list">
         {posts.map((post) => (
           <div key={post._id} className="user-post-card">

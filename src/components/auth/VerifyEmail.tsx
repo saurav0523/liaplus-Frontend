@@ -1,39 +1,3 @@
-// import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import axios from 'axios';
-// import toast from 'react-hot-toast';
-// // import localforage from 'localforage';
-
-// function VerifyEmail() {
-//   const [email, setEmail] = useState('');
-//   // const [token, setToken] = useState('');
-//   const navigate = useNavigate();
-
-//   const handleVerify = async () => {
-//     try {
-//       // await axios.get(`https://liaplusai-backend-3.onrender.com/auth/verify?email=${email}`);
-//       const token=localStorage.getItem("verification_token")
-//       await axios.get(`https://liaplusai-backend-3.onrender.com/auth/verify?email=${email}&token=${token}`);
-
-//       localStorage.setItem('verified', "true"); 
-//       toast.success('User verified successfully!');
-//       () => navigate('/login');
-//     } catch (error) {
-//       toast.error('Verification failed. Please try again.');
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" />
-//       <button onClick={handleVerify}>Verify Email</button>
-//     </div>
-//   );
-// }
-
-// export default VerifyEmail;
-
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
